@@ -1,4 +1,45 @@
-@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&family=Literata:ital,wght@0,200..900;1,200..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
+/* album.css - Vanilla CSS for Martina Paganin Portfolio Album page */
+
+
+/* Design Tokens & Theme Variables */
+:root {
+  /* Colors */
+  --bg-color: #0b1515;
+  --primary-color: #96d1d3;
+  --primary-container: #004b4d;
+  --secondary-color: #ffb77b;
+  --on-secondary: #4d2700;
+  --on-surface: #e2e2e3;
+  --on-surface-variant: #bfc8c8;
+  --outline: #899292;
+  --outline-variant: #3f4849;
+  --surface-container: #1e2021;
+  --newsletter-bg: #0f1d1d;
+
+  /* Spacing */
+  --margin-mobile: 24px;
+  --margin-desktop: 80px;
+  --gutter: 24px;
+  --stack-xl: 120px;
+  --stack-md: 48px;
+
+  /* Fonts */
+  --font-headline: 'Bodoni Moda', serif;
+  --font-body: 'Literata', serif;
+  --font-label: 'Hanken Grotesk', sans-serif;
+}
+
+.album-page {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--on-surface);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 * {
   box-sizing: border-box;
@@ -7,18 +48,6 @@
 
 body {
   margin: 0;
-}
-
-.album-page {
-  min-height: 100vh;
-  background-color: #121415;
-  color: #e2e2e3;
-  font-family: "Literata", serif;
-  font-size: 16px;
-  line-height: 28px;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .material-symbols-outlined {
