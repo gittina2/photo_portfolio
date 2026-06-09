@@ -480,6 +480,11 @@
   transform: scale(1.1);
 }
 
+.album-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .album-card-tag {
   font-family: var(--font-label);
   font-size: 12px;

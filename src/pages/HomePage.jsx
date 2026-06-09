@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/HomePage.css';
 import albums from "../DATA/albums.json";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
   const [email, setEmail] = useState('');
@@ -44,7 +45,7 @@ export default function HomePage() {
           <img
             className="hero-bg-img"
             alt="A cinematic, wide-angle landscape photograph of the Scottish Highlands under a heavy, moody sky filled with dark, swirling clouds."
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL6Sv-a6mxvpwTPnomDMwyhITqbOxKprmWpf7UKXc1M8dU_b56xb3_6Ovs-b_nsVpkqm6FlyppNfc8avlMQyTa1H-gLvFqSCnDfEfCb6OlgLF9zUzZSGV2ayCVq93u31HUUhvjmt14hv8K0gJcFePT25BVgs6aycC2nr6wwrO_wD0aWkgK-VI3UbvLLhC0qyJjkWYnqQq5Uvzc5xT0-PgddBK2xs0UCHA0Qc24fI0GK7SrLndZdeill_hCkYIAdFa2ATw5JDAFVHdt"
+            src="https://res.cloudinary.com/dqyfoxlko/image/upload/v1772201439/DSCF1011-2_-_Copia_rgbs32.jpg"
           />
           <div className="hero-overlay-gradient"></div>
         </div>
@@ -97,16 +98,18 @@ export default function HomePage() {
 
           <div className="portfolio-grid">
             {albums.map(album => (
-              <div className="album-card">
-                <div className="album-img-wrapper">
-                  <img
-                    className="album-img"
-                    alt={album.title}
-                    src={album.coverUrl}
-                  />
+              <Link to={`/album/${album.id}`} className="album-card-link">
+                <div className="album-card">
+                  <div className="album-img-wrapper">
+                    <img
+                      className="album-img"
+                      alt={album.title}
+                      src={album.coverUrl}
+                    />
+                  </div>
+                  <h4 className="album-card-title font-headline-md">{album.title}</h4>
                 </div>
-                <h4 className="album-card-title font-headline-md">{album.title}</h4>
-              </div>
+              </Link>
             ))}
           </div>
 
