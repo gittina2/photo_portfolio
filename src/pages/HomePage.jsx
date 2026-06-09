@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/HomePage.css';
+import albums from "../DATA/albums.json";
 
 export default function HomePage() {
   const [email, setEmail] = useState('');
@@ -92,46 +93,24 @@ export default function HomePage() {
             </div>
           </div>
 
+
+
           <div className="portfolio-grid">
-            {/* Album Card 1 */}
-            <div className="album-card">
-              <div className="album-img-wrapper">
-                <img
-                  className="album-img"
-                  alt="Lone castle ruins on a misty cliff"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGx64lqKmuuOD9Jys8SFKAfeZEuRW-umVbSdHzMi_WVH1uqljcE3i1OTklUl_TvY54jwgMeshLOc_BtMXq3Y5Pg8KGOParJyXilMQXsmtwuETC__3oaa0_r9iDkq3HKvpBA-tggyTLzBj8BwFmOcHy94uUnXKBycwGeRoB7Z1JBMvRRI_mOm-Beed4kaY1ALFiQWlQBgips5CYql3JZATv858Hw8miQ6WHnQsXlpQnFn3zG7-VDLK8BhRYZba37ajIJlbjANnIefC4"
-                />
+            {albums.map(album => (
+              <div className="album-card">
+                <div className="album-img-wrapper">
+                  <img
+                    className="album-img"
+                    alt={album.title}
+                    src={album.coverUrl}
+                  />
+                </div>
+                <h4 className="album-card-title font-headline-md">{album.title}</h4>
               </div>
-              <p className="album-card-tag">Archivio 01</p>
-              <h4 className="album-card-title font-headline-md">Scozia: Terre Alte</h4>
-            </div>
-
-            {/* Album Card 2 */}
-            <div className="album-card">
-              <div className="album-img-wrapper">
-                <img
-                  className="album-img"
-                  alt="Venice street photography blue hour"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRCtgGJdNqMZvRqKrZirstdE2sOG0x3WolOP42SmHu1lZftpTVJvOrhX9GdaawGB69S-TXv5wr7_6dBznvze3ufwAcgaW7kZvk-J088V1lI3UX1CrScpSAKySvu8nAwjLeIgcNuPZf3jAfZ-YZQ9kPCCm_XQpKnQ54z4abpUVBXyBi06ASq-LBbNVPAhJF4LFrCU_Pl7yzIpV8cox9sIYCUklkO-YyiFXOdLSMVTWTLlMMkLF2n6kTDyGGfwRGoAKvio3oD-fbISUl"
-                />
-              </div>
-              <p className="album-card-tag">Archivio 02</p>
-              <h4 className="album-card-title font-headline-md">Italia: Scorci Urbani</h4>
-            </div>
-
-            {/* Album Card 3 */}
-            <div className="album-card">
-              <div className="album-img-wrapper">
-                <img
-                  className="album-img"
-                  alt="Minimalist mountain landscape snowy horizon"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA22TOWcHPOoNzqfTH7t-6fI0Uhp4mMMbHysNKuEADgMZte_W1Dpthq6UcOkOFIJ0f0EJ6Eizv18CqtnzLjqyAH4gMFKpD0Nwtdh9G1ni4wgLkr_CbbbJ5OGag5zFUK4--yNAexsohCE_5rqrThT3h_VNDWWkRFdY75CvXgEYGJpaXkWifqvd7DccHpOPqQd2HkhSSj_q0DSklilaRenL0iWCg3V4CdhF2EA-oVXI8wrWLT2bRDYtllv75Q8X3y9PiMdrVDtiQsSAl"
-                />
-              </div>
-              <p className="album-card-tag">Archivio 03</p>
-              <h4 className="album-card-title font-headline-md">Orizzonti Infiniti</h4>
-            </div>
+            ))}
           </div>
+
+
         </section>
 
         {/* Newsletter/Contact CTA */}
