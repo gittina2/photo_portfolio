@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/HomePage.css';
 import albums from "../DATA/albums.json";
+
 import { Link } from "react-router-dom";
 
 export default function HomePage() {

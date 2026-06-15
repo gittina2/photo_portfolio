@@ -3,11 +3,19 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import albums from "../DATA/albums.json";
+import textContent from "../DATA/textcontent.json";
 
 export default function Album() {
 
   const { id } = useParams();
   const album = albums.find(a => a.id === id);
+  const currentIndex = albums.findIndex(a => a.id === id);
+  const nextAlbum = albums[currentIndex + 1];
+
+  const textcontent = textContent.find(a => a.title === id);
+  //console.log(textcontent);
+
+  // const prevAlbum = albums[album - 1];
   const images = album.images;
 
   const layoutPattern = ["wide", "mid", "mid", "tall", "tall", "tall"];
@@ -15,6 +23,17 @@ export default function Album() {
 
   const currentImg = selectedIndex !== null ? images[selectedIndex] : null;
 
+  const goPrev = () => {
+    setSelectedIndex(prev =>
+      prev > 0 ? prev - 1 : images.length - 1
+    );
+  };
+
+  const goNext = () => {
+    setSelectedIndex(prev =>
+      prev < images.length - 1 ? prev + 1 : 0
+    );
+  };
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
@@ -22,15 +41,11 @@ export default function Album() {
       }
 
       if (e.key === "ArrowRight") {
-        setSelectedIndex(prev =>
-          prev === null ? 0 : (prev + 1) % images.length
-        );
+        goNext();
       }
 
       if (e.key === "ArrowLeft") {
-        setSelectedIndex(prev =>
-          prev === null ? 0 : (prev - 1 + images.length) % images.length
-        );
+        goPrev();
       }
     };
 
@@ -63,15 +78,15 @@ export default function Album() {
         <header className="album-header">
           <div className="album-header-row">
             <div className="album-header-copy">
-              <span className="album-kicker">Collection - Series 04</span>
-              <h1 className="album-title">Scozia: Terre Alte</h1>
+              <span className="album-kicker">{textcontent.kicker}</span>
+              <h1 className="album-title">{textcontent.fancytitle}</h1>
             </div>
             <div className="album-location">
-              <span className="album-location-text">Isle of Skye, Scotland</span>
+              <span className="album-location-text">{textcontent.location}</span>
             </div>
           </div>
           <p className="album-description">
-            An exploration of the geological trauma and silent resilience of the Scottish Highlands. High-contrast captures of the Quiraing and the Old Man of Storr, where the horizon dissolves into the mist.
+            {textcontent.description}
           </p>
         </header>
 
@@ -107,24 +122,57 @@ export default function Album() {
 
           {selectedIndex !== null && (
             <div className="lightbox" onClick={() => setSelectedIndex(null)}>
-              <img src={images[selectedIndex].url} />
-              <button onClick={(e) => {
-                e.stopPropagation();
-                setSelectedIndex(prev =>
-                  prev > 0 ? prev - 1 : images.length - 1
-                );
-              }}>
-                ←
+
+              <button
+                className="lightbox-close"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedIndex(null);
+                }}
+              >
+                <span className="material-symbols-outlined">
+                  close
+                </span>
               </button>
 
-              <button onClick={(e) => {
-                e.stopPropagation();
-                setSelectedIndex(prev =>
-                  prev < images.length - 1 ? prev + 1 : 0
-                );
-              }}>
-                →
+              <button
+                className="lightbox-arrow lightbox-arrow-left"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedIndex(prev =>
+                    prev > 0 ? prev - 1 : images.length - 1
+                  );
+                }}
+              >
+                <span className="material-symbols-outlined">
+                  arrow_back_ios
+                </span>
               </button>
+
+              <div className="lightbox-image">
+                <img src={images[selectedIndex].url}
+                  onClick={(e) => e.stopPropagation()} />
+
+                <div className="lightbox-caption">
+                  <p>{images[selectedIndex].caption}</p>
+                </div>
+              </div>
+
+              {/* RIGHT */}
+              <button
+                className="lightbox-arrow lightbox-arrow-right"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedIndex(prev =>
+                    prev < images.length - 1 ? prev + 1 : 0
+                  );
+                }}
+              >
+                <span className="material-symbols-outlined">
+                  arrow_forward_ios
+                </span>
+              </button>
+
 
 
             </div>
@@ -132,13 +180,20 @@ export default function Album() {
         </section>
 
         <section className="album-next-section">
-          <a className="album-next-link" href="#">
+          <Link
+            className="album-next-link"
+            to={`/album/${nextAlbum.id}`}
+          >
             <span className="album-next-label">Next Series</span>
-            <h3 className="album-next-title">Urban Silence: Milano</h3>
-            <span className="material-symbols-outlined album-next-icon" data-icon="trending_flat">
+
+            <h3 className="album-next-title">
+              {nextAlbum.title}
+            </h3>
+
+            <span className="material-symbols-outlined album-next-icon">
               trending_flat
             </span>
-          </a>
+          </Link>
         </section>
       </main>
 
@@ -165,6 +220,6 @@ export default function Album() {
           <div className="album-copyright">© 2024 Martina Paganin. All rights reserved.</div>
         </div>
       </footer>
-    </div>
+    </div >
   );
 }

@@ -1,0 +1,72 @@
+[
+    {
+        "title": "highlands",
+        "fancytitle": "Highlands",
+        "location": "Highlands, Scotland",
+        "description": "An exploration of the geological trauma and silent resilience of the Scottish Highlands. High-contrast captures of the Quiraing and the Old Man of Storr, where the horizon dissolves into the mist.",
+        "kicker": "Collection - Series 01"
+    },
+    {
+        "title": "highlandwoods",
+        "fancytitle": "Highland Woods",
+        "location": "Highlands, Scotland",
+        "description": "An exploration of the geological trauma and silent resilience of the Scottish Highlands. High-contrast captures of the Quiraing and the Old Man of Storr, where the horizon dissolves into the mist.",
+        "kicker": "Collection - Series 02"
+    },
+    {
+        "title": "orcadi",
+        "fancytitle": "Orkney Islands",
+        "location": "Orkney Islands, Scotland",
+        "description": "An exploration of the geological trauma and silent resilience of the Scottish Highlands. High-contrast captures of the Quiraing and the Old Man of Storr, where the horizon dissolves into the mist.",
+        "kicker": "Collection - Series 03"
+    },
+    {
+        "title": "tuscany",
+        "fancytitle": "Tuscan Hills",
+        "location": "Tuscany, Italy",
+        "description": "An exploration of the geological trauma and silent resilience of the Scottish Highlands. High-contrast captures of the Quiraing and the Old Man of Storr, where the horizon dissolves into the mist.",
+        "kicker": "Collection - Series 04"
+    },
+    {
+        "title": "ebridi",
+        "fancytitle": "Hebrides",
+        "location": "Hebrides, Scotland",
+        "description": "An exploration of the geological trauma and silent resilience of the Scottish Highlands. High-contrast captures of the Quiraing and the Old Man of Storr, where the horizon dissolves into the mist.",
+        "kicker": "Collection - Series 04"
+    },
+    {
+        "title": "eastside",
+        "fancytitle": "Scottish Eastside",
+        "location": "Eastside, Scotland",
+        "description": "An exploration of the geological trauma and silent resilience of the Scottish Highlands. High-contrast captures of the Quiraing and the Old Man of Storr, where the horizon dissolves into the mist.",
+        "kicker": "Collection - Series 04"
+    },
+    {
+        "title": "colorsofitaly",
+        "fancytitle": "Colours of Italy",
+        "location": "Sud Italia",
+        "description": "An exploration of the geological trauma and silent resilience of the Scottish Highlands. High-contrast captures of the Quiraing and the Old Man of Storr, where the horizon dissolves into the mist.",
+        "kicker": "Collection - Series 05"
+    },
+    {
+        "title": "dolomites",
+        "fancytitle": "Dolomites",
+        "location": "Belluno, Italy",
+        "description": "An exploration of the geological trauma and silent resilience of the Scottish Highlands. High-contrast captures of the Quiraing and the Old Man of Storr, where the horizon dissolves into the mist.",
+        "kicker": "Collection - Series 06"
+    },
+    {
+        "title": "skye",
+        "fancytitle": "Isle of Skye",
+        "location": "Isle of Skye, Scotland",
+        "description": "An exploration of the geological trauma and silent resilience of the Scottish Highlands. High-contrast captures of the Quiraing and the Old Man of Storr, where the horizon dissolves into the mist.",
+        "kicker": "Collection - Series 07"
+    },
+    {
+        "title": "BN_edi",
+        "fancytitle": "Black&White Edinburgh",
+        "location": "Edinburgh, Scotland",
+        "description": "An exploration of the geological trauma and silent resilience of the Scottish Highlands. High-contrast captures of the Quiraing and the Old Man of Storr, where the horizon dissolves into the mist.",
+        "kicker": "Collection - Series 08"
+    }
+]
