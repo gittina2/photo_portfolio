@@ -1,72 +1,72 @@
 [
     {
-        "title": "highlands",
+        "id": "highlands",
         "fancytitle": "Highlands",
         "location": "Highlands, Scotland",
-        "description": "An exploration of the geological trauma and silent resilience of the Scottish Highlands. High-contrast captures of the Quiraing and the Old Man of Storr, where the horizon dissolves into the mist.",
+        "description": "Fredde, selvagge, antiche e mistiche. Un paesaggio che impone silenzio e misura il tempo con il vento.",
         "kicker": "Collection - Series 01"
     },
     {
-        "title": "highlandwoods",
-        "fancytitle": "Highland Woods",
+        "id": "highlandwoods",
+        "fancytitle": "Fifty shades of Green",
         "location": "Highlands, Scotland",
-        "description": "An exploration of the geological trauma and silent resilience of the Scottish Highlands. High-contrast captures of the Quiraing and the Old Man of Storr, where the horizon dissolves into the mist.",
+        "description": "Tra sentieri e ponti, dove la luce si spezza tra gli alberi e sembra possibile incontrare le fate.",
         "kicker": "Collection - Series 02"
     },
     {
-        "title": "orcadi",
+        "id": "orcadi",
         "fancytitle": "Orkney Islands",
         "location": "Orkney Islands, Scotland",
-        "description": "An exploration of the geological trauma and silent resilience of the Scottish Highlands. High-contrast captures of the Quiraing and the Old Man of Storr, where the horizon dissolves into the mist.",
+        "description": "A cavallo tra il Mare del Nord e l’Oceano Atlantico, dove la terra resiste mentre il mare la riscrive continuamente.",
         "kicker": "Collection - Series 03"
     },
     {
-        "title": "tuscany",
-        "fancytitle": "Tuscan Hills",
+        "id": "tuscany",
+        "fancytitle": "Colline Toscane",
         "location": "Tuscany, Italy",
-        "description": "An exploration of the geological trauma and silent resilience of the Scottish Highlands. High-contrast captures of the Quiraing and the Old Man of Storr, where the horizon dissolves into the mist.",
+        "description": "Colline estive e campi aperti che respirano lentamente, tra luce stabile e una memoria rurale che resta sospesa nel tempo.",
         "kicker": "Collection - Series 04"
     },
     {
-        "title": "ebridi",
+        "id": "ebridi",
         "fancytitle": "Hebrides",
         "location": "Hebrides, Scotland",
-        "description": "An exploration of the geological trauma and silent resilience of the Scottish Highlands. High-contrast captures of the Quiraing and the Old Man of Storr, where the horizon dissolves into the mist.",
-        "kicker": "Collection - Series 04"
-    },
-    {
-        "title": "eastside",
-        "fancytitle": "Scottish Eastside",
-        "location": "Eastside, Scotland",
-        "description": "An exploration of the geological trauma and silent resilience of the Scottish Highlands. High-contrast captures of the Quiraing and the Old Man of Storr, where the horizon dissolves into the mist.",
-        "kicker": "Collection - Series 04"
-    },
-    {
-        "title": "colorsofitaly",
-        "fancytitle": "Colours of Italy",
-        "location": "Sud Italia",
-        "description": "An exploration of the geological trauma and silent resilience of the Scottish Highlands. High-contrast captures of the Quiraing and the Old Man of Storr, where the horizon dissolves into the mist.",
+        "description": "Dove il solstizio sembra ancora un rito del paesaggio, tra pietra, acqua e orizzonti che non si lasciano definire.",
         "kicker": "Collection - Series 05"
     },
     {
-        "title": "dolomites",
-        "fancytitle": "Dolomites",
-        "location": "Belluno, Italy",
-        "description": "An exploration of the geological trauma and silent resilience of the Scottish Highlands. High-contrast captures of the Quiraing and the Old Man of Storr, where the horizon dissolves into the mist.",
+        "id": "eastside",
+        "fancytitle": "Scottish Eastside",
+        "location": "Eastside, Scotland",
+        "description": "Coste nebbiose e antichi castelli sospesi sul mare, dove la storia sembra ancora trattenuta nel vento.",
         "kicker": "Collection - Series 06"
     },
     {
-        "title": "skye",
-        "fancytitle": "Isle of Skye",
-        "location": "Isle of Skye, Scotland",
-        "description": "An exploration of the geological trauma and silent resilience of the Scottish Highlands. High-contrast captures of the Quiraing and the Old Man of Storr, where the horizon dissolves into the mist.",
+        "id": "colorsofitaly",
+        "fancytitle": "Colori d’Italia",
+        "location": "Sud Italia",
+        "description": "Un viaggio tra coste frastagliate e borghi antichi, dove la luce del sud scolpisce i profili e il tempo sembra rallentare.",
         "kicker": "Collection - Series 07"
     },
     {
-        "title": "BN_edi",
+        "id": "dolomites",
+        "fancytitle": "Le Dolomiti",
+        "location": "Belluno, Italy",
+        "description": "Boschi e antiche barriere coralline trasformate in roccia, un paesaggio verticale in cui fragilità e permanenza convivono.",
+        "kicker": "Collection - Series 08"
+    },
+    {
+        "id": "skye",
+        "fancytitle": "Isle of Skye",
+        "location": "Isle of Skye, Scotland",
+        "description": "Aspra, mutevole, essenziale. Un luogo che cambia forma con la luce e non concede mai un’immagine definitiva.",
+        "kicker": "Collection - Series 09"
+    },
+    {
+        "id": "BN_edi",
         "fancytitle": "Black&White Edinburgh",
         "location": "Edinburgh, Scotland",
-        "description": "An exploration of the geological trauma and silent resilience of the Scottish Highlands. High-contrast captures of the Quiraing and the Old Man of Storr, where the horizon dissolves into the mist.",
-        "kicker": "Collection - Series 08"
+        "description": "Una passeggiata monocromatica tra i pattern della città, dove la pietra diventa ritmo e la luce costruisce memoria.",
+        "kicker": "Collection - Series 10"
     }
 ]

@@ -10,12 +10,14 @@ export default function Album() {
   const { id } = useParams();
   const album = albums.find(a => a.id === id);
   const currentIndex = albums.findIndex(a => a.id === id);
-  const nextAlbum = albums[currentIndex + 1];
+  const nextAlbum = albums[(currentIndex + 1) % albums.length];
+  const prevAlbum = albums[(currentIndex - 1 + albums.length) % albums.length];
 
-  const textcontent = textContent.find(a => a.title === id);
-  //console.log(textcontent);
+  const textcontent = textContent.find(a => a.id === id);
+  const textcontentCurrentIndex = textContent.findIndex(a => a.id === id);
+  const textcontentNext = textContent[(textcontentCurrentIndex + 1) % textContent.length];
+  const textcontentPrev = textContent[(textcontentCurrentIndex - 1 + textContent.length) % textContent.length];
 
-  // const prevAlbum = albums[album - 1];
   const images = album.images;
 
   const layoutPattern = ["wide", "mid", "mid", "tall", "tall", "tall"];
@@ -172,38 +174,54 @@ export default function Album() {
                   arrow_forward_ios
                 </span>
               </button>
-
-
-
             </div>
           )}
         </section>
 
-        <section className="album-next-section">
-          <Link
-            className="album-next-link"
-            to={`/album/${nextAlbum.id}`}
-          >
-            <span className="album-next-label">Next Series</span>
+        <div className="album-navigation">
+          <section className="album-prev-section">
+            <Link
+              className="album-prev-link"
+              to={`/album/${prevAlbum.id}`}
+            >
+              <span className="album-prev-label">Previous Series</span>
 
-            <h3 className="album-next-title">
-              {nextAlbum.title}
-            </h3>
+              <h3 className="album-prev-title">
+                {textcontentPrev.fancytitle}
+              </h3>
 
-            <span className="material-symbols-outlined album-next-icon">
-              trending_flat
-            </span>
-          </Link>
-        </section>
+              <span className="material-symbols-outlined album-prev-icon">
+                west
+              </span>
+            </Link>
+          </section>
+
+          <section className="album-next-section">
+            <Link
+              className="album-next-link"
+              to={`/album/${nextAlbum.id}`}
+            >
+              <span className="album-next-label">Next Series</span>
+
+              <h3 className="album-next-title">
+                {textcontentNext.fancytitle}
+              </h3>
+
+              <span className="material-symbols-outlined album-next-icon">
+                east
+              </span>
+            </Link>
+          </section>
+        </div>
       </main>
 
+      {/*Footer*/}
       <footer className="album-footer">
         <div className="album-footer-brand-block">
           <span className="album-brand">Martina Paganin</span>
-          <p className="album-footer-subtitle">Landscape &amp; Street Photography</p>
         </div>
         <div className="album-footer-links-block">
-          <div className="album-footer-links">
+          {/*<div className="album-footer-links">
             <a className="album-footer-link" href="#">
               Archives
             </a>
@@ -216,8 +234,8 @@ export default function Album() {
             <a className="album-footer-link" href="#">
               Social
             </a>
-          </div>
-          <div className="album-copyright">© 2024 Martina Paganin. All rights reserved.</div>
+          </div>*/}
+          <div className="album-copyright">© 2026 Martina Paganin. All rights reserved.</div>
         </div>
       </footer>
     </div >

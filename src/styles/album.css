@@ -374,14 +374,16 @@ body {
   font-size: 36px;
 }
 
-.album-next-section {
+.album-navigation {
   display: flex;
-  justify-content: center;
-  margin-top: 120px;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 6rem;
   padding-right: 24px;
   padding-left: 24px;
 }
 
+.album-prev-link,
 .album-next-link {
   display: flex;
   flex-direction: column;
@@ -392,6 +394,7 @@ body {
   text-decoration: none;
 }
 
+.album-prev-label,
 .album-next-label {
   font-family: "Hanken Grotesk", sans-serif;
   font-size: 12px;
@@ -402,6 +405,7 @@ body {
   text-transform: uppercase;
 }
 
+.album-prev-title,
 .album-next-title {
   margin: 0;
   border-bottom: 1px solid transparent;
@@ -413,10 +417,16 @@ body {
   transition: border-color 150ms;
 }
 
+.album-prev-link:hover .album-prev-title,
 .album-next-link:hover .album-next-title {
   border-color: #ffb77b;
 }
 
+.album-prev-link:hover .album-prev-icon {
+  transform: translateX(-8px);
+}
+
+.album-prev-icon,
 .album-next-icon {
   color: #96d1d3;
   transition: transform 150ms;
@@ -507,6 +517,12 @@ body {
 
   .album-header,
   .album-gallery-section,
+
+  .album-prev-section {
+    padding-right: 80px;
+    padding-left: 80px;
+  }
+
   .album-next-section {
     padding-right: 80px;
     padding-left: 80px;
@@ -518,6 +534,7 @@ body {
   }
 
   .album-title,
+  .album-prev-title,
   .album-next-title {
     font-size: 40px;
     line-height: 48px;
@@ -540,6 +557,15 @@ body {
 }
 
 @media (max-width: 768px) {
+
+  .album-navigation {
+    flex-direction: column;
+  }
+
+  .album-prev-section,
+  .album-next-section {
+    text-align: left;
+  }
 
   .masonry-item-mid,
   .masonry-item-tall {

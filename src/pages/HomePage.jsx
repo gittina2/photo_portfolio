@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/HomePage.css';
 import albums from "../DATA/albums.json";
+import textContent from "../DATA/textcontent.json";
 
 import { Link } from "react-router-dom";
 
@@ -14,6 +15,8 @@ export default function HomePage() {
       setEmail('');
     }
   };
+
+  console.log(textContent[1].fancytitle);
 
   return (
     <div className="home-page-container">
@@ -51,7 +54,7 @@ export default function HomePage() {
           <div className="hero-overlay-gradient"></div>
         </div>
         <div className="hero-content">
-          <p className="hero-subtitle">Landscape &amp; Street Photography</p>
+          <p className="hero-subtitle">Uno sguardo sulla luce, sui paesaggi e sull’atmosfera dei luoghi</p>
           <h1 className="hero-title font-display-lg">Catturare l'anima dei luoghi.</h1>
         </div>
       </header>
@@ -63,7 +66,11 @@ export default function HomePage() {
             <div className="bio-content">
               <span className="bio-tag">L'Autrice</span>
               <h2 className="bio-quote">
-                "Benvenuti nel mio spazio visivo. Sono Martina Paganin, una fotografa amatoriale mossa dalla passione per la quiete dei paesaggi e l'anima della street photography. Attraverso il mio obiettivo, cerco di catturare l'essenza della Scozia e l'eleganza senza tempo dell'Italia."
+                "Osservo come la luce cambia i luoghi: quando filtra tra le nuvole o tra gli alberi, quando si riflette nelle pozzanghere, quando rende più intensi i colori della natura.
+                <br />
+                Ricerco anche gli spazi costruiti dall’uomo, i pattern degli edifici e il modo in cui la presenza umana si inserisce nel paesaggio naturale.
+                <br />
+                Il mio lavoro nasce da questo sguardo: notare ciò che accade tra luce, spazio e atmosfera e restituirlo nel momento in cui si rivela."
               </h2>
             </div>
           </div>
@@ -98,20 +105,27 @@ export default function HomePage() {
 
 
           <div className="portfolio-grid">
-            {albums.map(album => (
-              <Link to={`/album/${album.id}`} className="album-card-link">
-                <div className="album-card">
-                  <div className="album-img-wrapper">
-                    <img
-                      className="album-img"
-                      alt={album.title}
-                      src={album.coverUrl}
-                    />
+            {albums.map(album => {
+
+              const meta = textContent.find(t => t.id === album.id);
+
+              return (
+
+                <Link to={`/album/${album.id}`} className="album-card-link">
+                  <div className="album-card">
+                    <div className="album-img-wrapper">
+                      <img
+                        className="album-img"
+                        alt={album.title}
+                        src={album.coverUrl}
+                      />
+                    </div>
+                    <h4 className="album-card-title font-headline-md">
+                      {meta?.fancytitle}</h4>
                   </div>
-                  <h4 className="album-card-title font-headline-md">{album.title}</h4>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
           </div>
 
 
@@ -119,7 +133,7 @@ export default function HomePage() {
 
         {/* Newsletter/Contact CTA */}
         <section id="contacts" className="newsletter-section">
-          <h2 className="newsletter-title font-headline-lg">Vuoi collaborare o ricevere stampe?</h2>
+          <h2 className="newsletter-title font-headline-lg">Vuoi collaborare o contattarmi?</h2>
           <form className="newsletter-form-container" onSubmit={handleSubmit}>
             <input
               className="newsletter-input-field"
@@ -129,7 +143,7 @@ export default function HomePage() {
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <button className="newsletter-submit-btn" type="submit">Invia</button>
+            {/*<button className="newsletter-submit-btn" type="submit">Invia</button>*/}
           </form>
         </section>
       </main>
@@ -140,19 +154,19 @@ export default function HomePage() {
           <span className="footer-logo-text">Martina Paganin</span>
         </div>
 
-        <div className="footer-links-block">
+        {/*<div className="footer-links-block">
           <a className="footer-link-item" href="#">Archives</a>
           <a className="footer-link-item" href="#">Process</a>
           <a className="footer-link-item" href="#">Legal</a>
           <a className="footer-link-item" href="#">Social</a>
-        </div>
+        </div>*/}
 
         <div className="footer-copyright-block">
           <p className="footer-copyright-text">
-            © 2024 Martina Paganin. All rights reserved.
+            © 2026 Martina Paganin. All rights reserved.
           </p>
         </div>
       </footer>
-    </div>
+    </div >
   );
 }
