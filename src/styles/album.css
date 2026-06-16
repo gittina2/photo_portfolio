@@ -69,6 +69,8 @@ body {
 
 .album-nav {
   position: fixed;
+  padding: 0 24px;
+  height: 72px;
   top: 0;
   left: 0;
   z-index: 50;
@@ -76,14 +78,9 @@ body {
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  padding: 24px;
   background-color: rgba(11, 21, 21, 0.85);
   backdrop-filter: blur(12px);
   transition: transform 300ms;
-}
-
-.album-nav:active {
-  transform: scale(0.95);
 }
 
 .album-nav-brand-wrap {
@@ -103,48 +100,122 @@ body {
   text-decoration: none;
 }
 
-.album-nav-links {
-  display: none;
-  align-items: center;
-  gap: 40px;
+.dropdown-container {
+  position: relative;
+  display: inline-flex;
+  height: 100%;
 }
 
-.album-nav-link {
-  font-family: "Hanken Grotesk", sans-serif;
+.album-nav-button {
+  all: unset;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-label);
   font-size: 12px;
-  line-height: 16px;
-  font-weight: 600;
+  line-height: 100%;
   letter-spacing: 0.1em;
-  color: #bfc8c8;
+  font-weight: 600;
   text-transform: uppercase;
   text-decoration: none;
+  color: var(--on-surface-variant);
   transition: color 300ms;
+  cursor: pointer;
+  height: 100%;
 }
 
-.album-nav-link:hover {
-  color: #ffb77b;
-}
-
-.album-nav-link-active {
+.album-nav-button:active {
   color: #96d1d3;
   border-bottom: 1px solid rgba(255, 183, 123, 0.5);
 }
 
-.album-menu-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-  border: 0;
-  background: transparent;
-  color: #96d1d3;
+.album-nav-button:hover {
+  color: #ffb77b;
   cursor: pointer;
-  transition: color 150ms;
 }
 
-.album-menu-button:hover {
-  color: #ffb77b;
+.albums-button-dropdown {
+  cursor: pointer;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+
+
+  padding: 0.75rem 0;
+
+  background: rgba(8, 16, 16, 0.87);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(38, 59, 59, 0.205);
+  border-top: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+  min-width: 140px;
+
+  z-index: 9999;
+  opacity: 0;
+
+  animation: dropDown 0.25s ease forwards;
+
+
 }
+
+@keyframes dropDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.albums-button-dropdown a {
+  all: unset;
+  cursor: pointer;
+
+  text-align: center;
+
+  display: block;
+  color: white;
+  font-size: 12px;
+  opacity: 0.75;
+  padding: 2px 0;
+
+  transition: opacity 0.2s ease;
+
+  letter-spacing: 0.08em;
+}
+
+.albums-button-dropdown a:hover {
+  opacity: 1;
+  transform: translateX(-2px)
+}
+
+/*link contatti */
+.contact-nav-link {
+  all: unset;
+  font-family: var(--font-label);
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--on-surface-variant);
+  transition: color 0.300s ease, transform 0.3s ease;
+  transform: scale(1);
+}
+
+.contact-nav-link:hover {
+  color: #ffb77b;
+  cursor: pointer;
+}
+
 
 .album-main {
   padding-top: 160px;
@@ -513,6 +584,9 @@ body {
 
   .album-nav-links {
     display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 40px;
   }
 
   .album-header,

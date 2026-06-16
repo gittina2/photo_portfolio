@@ -85,7 +85,7 @@ export default function HomePage() {
             </div>
 
             <div className="portfolio-controls">
-              <div className="arrows-group">
+              {/*<div className="arrows-group">
                 <button className="arrow-btn" aria-label="Previous image">
                   <span className="material-symbols-outlined">chevron_left</span>
                 </button>
@@ -98,7 +98,7 @@ export default function HomePage() {
                 <button className="see-all-btn">
                   Vedi Tutto
                 </button>
-              </div>
+              </div>*/}
             </div>
           </div>
 

@@ -23,8 +23,11 @@ export default function Album() {
   const layoutPattern = ["wide", "mid", "mid", "tall", "tall", "tall"];
   const [selectedIndex, setSelectedIndex] = useState(null);
 
-  const currentImg = selectedIndex !== null ? images[selectedIndex] : null;
+  //const currentImg = selectedIndex !== null ? images[selectedIndex] : null;
 
+  const [open, setOpen] = useState(false);
+  console.log("open:", open);
+  console.log("albums:", textcontent);
   const goPrev = () => {
     setSelectedIndex(prev =>
       prev > 0 ? prev - 1 : images.length - 1
@@ -62,18 +65,34 @@ export default function Album() {
           <Link to="/" className="album-brand">Martina Paganin</Link>
         </div>
         <div className="album-nav-links">
-          <a className="album-nav-link album-nav-link-active" href="#">
-            Album
-          </a>
-          <a className="album-nav-link" href="#">
+
+          <div className="dropdown-container">
+            <button className="album-nav-button" onClick={() => setOpen(!open)}>
+              Albums
+            </button>
+
+
+            {open && (
+              <div className="albums-button-dropdown">
+                {textContent.map(textContent => (
+                  <Link
+                    key={textContent.id}
+                    to={`/album/${textContent.id}`}
+                    className="dropdown-item"
+                    onClick={() => setOpen(false)}
+                  >
+                    {textContent.fancytitle}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <a className="contact-nav-link" href="#">
             Contacts
           </a>
         </div>
-        <button className="album-menu-button" type="button">
-          <span className="material-symbols-outlined" data-icon="menu">
-            menu
-          </span>
-        </button>
+
       </nav>
 
       <main className="album-main">

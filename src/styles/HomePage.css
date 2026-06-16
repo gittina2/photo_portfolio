@@ -318,8 +318,8 @@
 
 .bio-quote {
   font-family: var(--font-headline);
-  font-size: 40px;
-  line-height: 48px;
+  font-size: 30px;
+  line-height: 40px;
   font-weight: 500;
   color: var(--on-surface);
   line-height: 1.625;
