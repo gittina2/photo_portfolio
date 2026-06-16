@@ -292,6 +292,7 @@
   padding-bottom: var(--stack-xl);
   padding-left: var(--margin-mobile);
   padding-right: var(--margin-mobile);
+  outline: 2px solid red;
 }
 
 @media (min-width: 768px) {
@@ -334,6 +335,8 @@
   max-width: 896px;
   /* max-w-4xl */
   text-align: left;
+
+
 }
 
 .hero-subtitle {
@@ -415,7 +418,7 @@
 
 @media (max-width: 768px) {
   .bio-quote {
-    font-size: 22px;
+    font-size: 28px;
     line-height: 38px;
     padding-left: 20px;
   }
