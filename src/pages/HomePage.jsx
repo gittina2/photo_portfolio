@@ -16,7 +16,7 @@ export default function HomePage() {
     }
   };
 
-  console.log(textContent[1].fancytitle);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <div className="home-page-container">
@@ -38,9 +38,39 @@ export default function HomePage() {
         </div>
 
         {/* Mobile Action */}
-        <button className="mobile-menu-btn" aria-label="Menu">
-          <span className="material-symbols-outlined" data-icon="menu">menu</span>
-        </button>
+        <div className="mobile-menu-container">
+          <button
+            className="mobile-menu-btn"
+            aria-label="Menu"
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen(!mobileOpen)}
+          >
+            <span className="material-symbols-outlined">
+              {mobileOpen ? "close" : "menu"}
+            </span>
+          </button>
+
+          {mobileOpen && (
+            <div className="mobile-dropdown">
+
+              <a
+                href="#Album"
+                className="mobile-dropdown-link"
+                onClick={() => setMobileOpen(false)}
+              >
+                Album
+              </a>
+
+              <a
+                href="#contacts"
+                className="mobile-dropdown-link"
+                onClick={() => setMobileOpen(false)}
+              >
+                Contacts
+              </a>
+            </div>
+          )}
+        </div>
       </nav>
 
       {/* Hero Section */}
@@ -64,7 +94,7 @@ export default function HomePage() {
         <section className="bio-section">
           <div className="grid-cols-12">
             <div className="bio-content">
-              <span className="bio-tag">L'Autrice</span>
+              <span className="bio-tag">Martina</span>
               <h2 className="bio-quote">
                 "Osservo come la luce cambia i luoghi: quando filtra tra le nuvole o tra gli alberi, quando si riflette nelle pozzanghere, quando rende più intensi i colori della natura.
                 <br />
