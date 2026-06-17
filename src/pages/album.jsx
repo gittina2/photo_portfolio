@@ -7,7 +7,7 @@ import albums from "../DATA/albums.json";
 import textContent from "../DATA/textcontent.json";
 
 export default function Album() {
-
+  // --- GETTING ALBUMS AND TEXTCONTENT FROM JSON FILES ---
   const { id } = useParams();
   const album = albums.find(a => a.id === id);
   const currentIndex = albums.findIndex(a => a.id === id);
@@ -21,50 +21,79 @@ export default function Album() {
 
   const images = album.images;
 
+  // --- MASONRY GRID LAYOUT ---
   const layoutPattern = ["wide", "mid", "mid", "tall", "tall", "tall"];
   const [selectedIndex, setSelectedIndex] = useState(null);
 
-  const touchStartX = useRef(null);
+  // --- DROPDOWN MENU OPEN/CLOSE STATE ---
+  const [open, setOpen] = useState(false);
+
+  // --- TOUCH SWIPE LOGIC ---
+  const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
+  const isSwiping = useRef(false);
+
+  // --- TOUCH START to exit the dropdown menu: recording the starting x & y position ---
   const handleTouchStart = (e) => {
+    if (e.target.closest("button")) return;
+
     touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+    isSwiping.current = false;
   };
 
+  // --- TOUCH MOVE: detecting if it is a swipe --- 
+  const handleTouchMove = (e) => {
+    const dx = Math.abs(e.touches[0].clientX - touchStartX.current);
+    const dy = Math.abs(e.touches[0].clientY - touchStartY.current);
+
+    // se si muove più in verticale → NON è swipe
+    if (dy > dx) {
+      isSwiping.current = false;
+    } else {
+      isSwiping.current = true;
+    }
+  };
+
+  // --- TOUCH END: closing the dropdown menu if swiping horizontally ---
   const handleTouchEnd = (e) => {
+    if (!isSwiping.current) return;
+
     const endX = e.changedTouches[0].clientX;
-
-    if (touchStartX.current === null) return;
-
     const diff = touchStartX.current - endX;
+
     const threshold = 50;
 
     if (diff > threshold) {
+      // swipe left → next
       setSelectedIndex((prev) =>
         prev < images.length - 1 ? prev + 1 : 0
       );
     }
 
     if (diff < -threshold) {
+      // swipe right → prev
       setSelectedIndex((prev) =>
         prev > 0 ? prev - 1 : images.length - 1
       );
     }
-
-    touchStartX.current = null;
   };
 
-  const [open, setOpen] = useState(false);
-
+  // --- NAVIGATION FUNCTIONS previous image ---
   const goPrev = () => {
     setSelectedIndex(prev =>
       prev > 0 ? prev - 1 : images.length - 1
     );
   };
 
+  // --- NAVIGATION FUNCTIONS next image ---
   const goNext = () => {
     setSelectedIndex(prev =>
       prev < images.length - 1 ? prev + 1 : 0
     );
   };
+
+  // --- KEYBOARD NAVIGATION ---
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
@@ -168,10 +197,7 @@ export default function Album() {
           </div>
 
           {selectedIndex !== null && (
-            <div className="lightbox"
-              onClick={() => setSelectedIndex(null)}
-              onTouchStart={handleTouchStart}
-              onTouchEnd={handleTouchEnd}>
+            <div className="lightbox" onClick={() => setSelectedIndex(null)}>
 
               <button
                 className="lightbox-close"

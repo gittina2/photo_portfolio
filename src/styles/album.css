@@ -83,6 +83,27 @@ body {
   transition: transform 300ms;
 }
 
+@media (max-width: 768px) {
+  .album-nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .album-nav {
+    padding: 0 16px;
+  }
+
+  .album-nav-links {
+    gap: 16px;
+  }
+
+  .album-nav-button,
+  .contact-nav-link {
+    font-size: 11px;
+  }
+}
 
 
 .album-nav-brand-wrap {
@@ -629,8 +650,8 @@ body {
   .album-nav-links {
     display: flex;
     align-items: center;
-    height: 100%;
     gap: 40px;
+    margin-left: auto;
   }
 
   .album-header,
@@ -673,6 +694,8 @@ body {
     align-items: flex-end;
   }
 }
+
+
 
 @media (max-width: 768px) {
 

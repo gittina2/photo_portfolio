@@ -26,11 +26,11 @@ export default function HomePage() {
       {/* TopNavBar */}
       <nav className="nav-bar">
         <div className="logo-group">
-          <img
+          {/*<img
             alt="Martina Paganin Logo"
             className="logo-icon-img"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwyQ3vPBTPoe349Cn-PZ6OqSTVGxpmwYlQyCsVlpAy6xoQ9_UCHopOjcLsniJfmgJzu4IomH-1DnLFsNb--MlADXJs-ifC0ktGzwWOjnQvWtpOSVXpSMcgRFD9FJxZ5zpcbsgM3kRsU8-tLH7IyG_DJEPsmme2J5NKFIogt7MPD0VsC_NAAbl9YtqyHPa-WUke0j3rYwZYjh5czbZmyVzviDeXxnNC_gu5B1JzMdrP9GHURGfggErmcC88drGgLZAe5KTufQhxg4AE"
-          />
+          />*/}
           <span className="logo-brand-name">Martina Paganin</span>
         </div>
 
