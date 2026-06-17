@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import '../styles/HomePage.css';
 import albums from "../DATA/albums.json";
 import textContent from "../DATA/textcontent.json";
+import heroImages from "../DATA/heroimages.json";
+import HeroCarousel from "../components/HeroCarousel";
+
 
 import { Link } from "react-router-dom";
 
@@ -75,19 +78,16 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <header className="hero-header">
-        <div className="hero-bg-wrapper">
-          <img
-            className="hero-bg-img"
-            alt="A cinematic, wide-angle landscape photograph of the Scottish Highlands under a heavy, moody sky filled with dark, swirling clouds."
-            src="https://res.cloudinary.com/dqyfoxlko/image/upload/v1772201439/DSCF1011-2_-_Copia_rgbs32.jpg"
-          />
-          <div className="hero-overlay-gradient"></div>
-        </div>
+
+        <HeroCarousel slides={heroImages} />
+
         <div className="hero-content">
           <p className="hero-subtitle">Uno sguardo sulla luce, sui paesaggi e sull’atmosfera dei luoghi</p>
           <h1 className="hero-title font-display-lg">Catturare l'anima dei luoghi.</h1>
         </div>
       </header>
+
+
 
       <main>
         {/* Bio Section */}

@@ -321,16 +321,46 @@
 .hero-bg-wrapper {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  overflow: hidden;
+}
 
+.hero-zoom-layer {
+  position: absolute;
+  inset: 0;
+  transform: scale(1.05);
+  animation: heroKenBurns 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes heroKenBurns {
+  0% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1.15);
+  }
 }
 
 .hero-bg-img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center bottom;
+
+  opacity: 0;
+  transition: opacity 1.4s ease;
+
+  will-change: opacity;
+
 }
+
+.hero-bg-img.active {
+  opacity: 1;
+
+}
+
 
 @media (max-width: 768px) {
   .hero-bg-img {

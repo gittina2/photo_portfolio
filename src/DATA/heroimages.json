@@ -1,72 +1,72 @@
 [
     {
         "id": "highlands",
-        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781183328/Image00022_e6vst9.jpg",
+        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781695367/DSCF0938-8_tzzxbs.jpg",
         "title": "highlands",
-        "mobilePosition": "50% 30%",
+        "mobilePosition": "60% 30%",
         "desktopPosition": "center"
     },
     {
         "id": "skye",
-        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781183214/Image00022_wl8mqi.jpg",
+        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781695323/DSCF1008-1_osi1mj.jpg",
         "title": "skye",
-        "mobilePosition": "50% 30%",
+        "mobilePosition": "80% 30%",
         "desktopPosition": "center"
     },
     {
         "id": "orcadi",
-        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781182350/Image00016_zguuni.jpg",
+        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781695338/DSCF9186-160_ahhfb0.jpg",
         "title": "orcadi",
-        "mobilePosition": "50% 30%",
+        "mobilePosition": "90% 30%",
         "desktopPosition": "center"
     },
     {
         "id": "tuscany",
-        "image": "https://res.cloudinary.com/XXX/image/upload/v123/hero1.jpg",
+        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781695315/DSCF7974-51_r625vk.jpg",
         "title": "tuscany",
-        "mobilePosition": "50% 30%",
+        "mobilePosition": "15% 30%",
         "desktopPosition": "center"
     },
     {
         "id": "ebridi",
-        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781183260/Image00009_e6erxk.jpg",
+        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781695375/DSCF0292-49_jtlzld.jpg",
         "title": "ebridi",
         "mobilePosition": "50% 30%",
         "desktopPosition": "center"
     },
     {
         "id": "eastside",
-        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781183251/Image00006_rvuwga.jpg",
+        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781695385/DSCF0899-8_yrhpox.jpg",
         "title": "eastside",
-        "mobilePosition": "50% 30%",
+        "mobilePosition": "80% 30%",
         "desktopPosition": "center"
     },
     {
         "id": "colorsofitaly",
-        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781183244/Image00002_wc1cwt.jpg",
+        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781695407/DSCF7115-5_ocu2vv.jpg",
         "title": "colorsofitaly",
-        "mobilePosition": "50% 30%",
+        "mobilePosition": "40% 30%",
         "desktopPosition": "center"
     },
     {
         "id": "dolomites",
-        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781183237/Image00009_qbbcru.jpg",
+        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781695394/DSCF6414-19_k9ql77.jpg",
         "title": "dolomites",
-        "mobilePosition": "50% 30%",
+        "mobilePosition": "45% 30%",
         "desktopPosition": "center"
     },
     {
         "id": "highlandwoods",
-        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781182347/Image00008_lvpnag.jpg",
+        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781695352/DSCF9822-116_rq4dqz.jpg",
         "title": "highlandwoods",
         "mobilePosition": "50% 30%",
         "desktopPosition": "center"
     },
     {
         "id": "BN_edi",
-        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1771944537/bn_02_cu1pbo.jpg",
+        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781695426/DSCF9507-8_jlfzac.jpg",
         "title": "BN_edi",
-        "mobilePosition": "50% 30%",
+        "mobilePosition": "45% 30%",
         "desktopPosition": "center"
     }
 ]
