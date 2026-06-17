@@ -96,7 +96,7 @@ export default function HomePage() {
             <div className="bio-content">
               <span className="bio-tag">Martina</span>
               <h2 className="bio-quote">
-                "Osservo come la luce cambia i luoghi: quando filtra tra le nuvole o tra gli alberi, quando si riflette nelle pozzanghere, quando rende più intensi i colori della natura.
+                "Mi piace osservare come la luce cambia i luoghi: quando filtra tra le nuvole o tra gli alberi, quando si riflette nelle pozzanghere, quando rende più intensi i colori della natura.
                 <br />
                 Ricerco anche gli spazi costruiti dall’uomo, i pattern degli edifici e il modo in cui la presenza umana si inserisce nel paesaggio naturale.
                 <br />
