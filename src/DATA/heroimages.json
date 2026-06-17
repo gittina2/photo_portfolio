@@ -1,0 +1,72 @@
+[
+    {
+        "id": "highlands",
+        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781183328/Image00022_e6vst9.jpg",
+        "title": "highlands",
+        "mobilePosition": "50% 30%",
+        "desktopPosition": "center"
+    },
+    {
+        "id": "skye",
+        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781183214/Image00022_wl8mqi.jpg",
+        "title": "skye",
+        "mobilePosition": "50% 30%",
+        "desktopPosition": "center"
+    },
+    {
+        "id": "orcadi",
+        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781182350/Image00016_zguuni.jpg",
+        "title": "orcadi",
+        "mobilePosition": "50% 30%",
+        "desktopPosition": "center"
+    },
+    {
+        "id": "tuscany",
+        "image": "https://res.cloudinary.com/XXX/image/upload/v123/hero1.jpg",
+        "title": "tuscany",
+        "mobilePosition": "50% 30%",
+        "desktopPosition": "center"
+    },
+    {
+        "id": "ebridi",
+        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781183260/Image00009_e6erxk.jpg",
+        "title": "ebridi",
+        "mobilePosition": "50% 30%",
+        "desktopPosition": "center"
+    },
+    {
+        "id": "eastside",
+        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781183251/Image00006_rvuwga.jpg",
+        "title": "eastside",
+        "mobilePosition": "50% 30%",
+        "desktopPosition": "center"
+    },
+    {
+        "id": "colorsofitaly",
+        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781183244/Image00002_wc1cwt.jpg",
+        "title": "colorsofitaly",
+        "mobilePosition": "50% 30%",
+        "desktopPosition": "center"
+    },
+    {
+        "id": "dolomites",
+        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781183237/Image00009_qbbcru.jpg",
+        "title": "dolomites",
+        "mobilePosition": "50% 30%",
+        "desktopPosition": "center"
+    },
+    {
+        "id": "highlandwoods",
+        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781182347/Image00008_lvpnag.jpg",
+        "title": "highlandwoods",
+        "mobilePosition": "50% 30%",
+        "desktopPosition": "center"
+    },
+    {
+        "id": "BN_edi",
+        "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1771944537/bn_02_cu1pbo.jpg",
+        "title": "BN_edi",
+        "mobilePosition": "50% 30%",
+        "desktopPosition": "center"
+    }
+]
