@@ -348,19 +348,50 @@ body {
 .lightbox {
   position: fixed;
   inset: 0;
+
   background: rgba(0, 0, 0, 0.9);
 
   display: flex;
   justify-content: center;
   align-items: center;
 
+  padding: 12px;
+  box-sizing: border-box;
+
   z-index: 9999;
 }
 
 .lightbox-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   max-width: 90vw;
-  max-height: 90vh;
+  max-height: 85vh;
+}
+
+.lightbox-image img {
+  max-width: 100%;
+  max-height: 75vh;
+
+  width: auto;
+  height: auto;
+
   object-fit: contain;
+  display: block;
+}
+
+
+@media (max-width: 768px) {
+
+  .lightbox {
+    padding: 12px;
+  }
+
+  .lightbox-image {
+    max-width: 94vw;
+    max-height: 80vh;
+  }
 }
 
 .lightbox-caption {
@@ -419,6 +450,17 @@ body {
 
 .lightbox-arrow:hover {
   transform: translateY(-50%) scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .lightbox-arrow {
+    display: none;
+  }
+
+  .lightbox-close {
+    top: 12px;
+    right: 12px;
+  }
 }
 
 .album-overlay {

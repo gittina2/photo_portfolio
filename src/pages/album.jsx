@@ -2,6 +2,7 @@ import "../styles/album.css";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
+import { useRef } from "react";
 import albums from "../DATA/albums.json";
 import textContent from "../DATA/textcontent.json";
 
@@ -23,11 +24,36 @@ export default function Album() {
   const layoutPattern = ["wide", "mid", "mid", "tall", "tall", "tall"];
   const [selectedIndex, setSelectedIndex] = useState(null);
 
-  //const currentImg = selectedIndex !== null ? images[selectedIndex] : null;
+  const touchStartX = useRef(null);
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    const endX = e.changedTouches[0].clientX;
+
+    if (touchStartX.current === null) return;
+
+    const diff = touchStartX.current - endX;
+    const threshold = 50;
+
+    if (diff > threshold) {
+      setSelectedIndex((prev) =>
+        prev < images.length - 1 ? prev + 1 : 0
+      );
+    }
+
+    if (diff < -threshold) {
+      setSelectedIndex((prev) =>
+        prev > 0 ? prev - 1 : images.length - 1
+      );
+    }
+
+    touchStartX.current = null;
+  };
 
   const [open, setOpen] = useState(false);
-  console.log("open:", open);
-  console.log("albums:", textcontent);
+
   const goPrev = () => {
     setSelectedIndex(prev =>
       prev > 0 ? prev - 1 : images.length - 1
@@ -142,7 +168,10 @@ export default function Album() {
           </div>
 
           {selectedIndex !== null && (
-            <div className="lightbox" onClick={() => setSelectedIndex(null)}>
+            <div className="lightbox"
+              onClick={() => setSelectedIndex(null)}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}>
 
               <button
                 className="lightbox-close"
