@@ -67,7 +67,7 @@ export default function Album() {
 
   // --- CLOSE DROPDOWN WHEN CLICKING OUTSIDE OF IT ---
   useEffect(() => {
-    const handleOutsideClick = (event) => {
+    const handleOutside = (event) => {
       if (
         dropdownRef.current &&
         !dropdownRef.current.contains(event.target)
@@ -76,24 +76,10 @@ export default function Album() {
       }
     };
 
-    useEffect(() => {
-      const handleOutside = (event) => {
-        if (
-          dropdownRef.current &&
-          !dropdownRef.current.contains(event.target)
-        ) {
-          setOpen(false);
-        }
-      };
+    document.addEventListener("pointerdown", handleOutside);
 
-      document.addEventListener("pointerdown", handleOutside);
-
-      return () => {
-        document.removeEventListener("pointerdown", handleOutside);
-      };
-    }, []);
     return () => {
-      document.removeEventListener("pointerdown", handleOutsideClick);
+      document.removeEventListener("pointerdown", handleOutside);
     };
   }, []);
 
