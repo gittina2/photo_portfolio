@@ -28,57 +28,6 @@ export default function Album() {
   // --- DROPDOWN MENU OPEN/CLOSE STATE ---
   const [open, setOpen] = useState(false);
 
-  // --- TOUCH SWIPE LOGIC ---
-  const touchStartX = useRef(0);
-  const touchStartY = useRef(0);
-  const isSwiping = useRef(false);
-
-  // --- TOUCH START to exit the dropdown menu: recording the starting x & y position ---
-  const handleTouchStart = (e) => {
-    if (e.target.closest("button")) return;
-
-    touchStartX.current = e.touches[0].clientX;
-    touchStartY.current = e.touches[0].clientY;
-    isSwiping.current = false;
-  };
-
-  // --- TOUCH MOVE: detecting if it is a swipe --- 
-  const handleTouchMove = (e) => {
-    const dx = Math.abs(e.touches[0].clientX - touchStartX.current);
-    const dy = Math.abs(e.touches[0].clientY - touchStartY.current);
-
-    // se si muove più in verticale → NON è swipe
-    if (dy > dx) {
-      isSwiping.current = false;
-    } else {
-      isSwiping.current = true;
-    }
-  };
-
-  // --- TOUCH END: closing the dropdown menu if swiping horizontally ---
-  const handleTouchEnd = (e) => {
-    if (!isSwiping.current) return;
-
-    const endX = e.changedTouches[0].clientX;
-    const diff = touchStartX.current - endX;
-
-    const threshold = 50;
-
-    if (diff > threshold) {
-      // swipe left → next
-      setSelectedIndex((prev) =>
-        prev < images.length - 1 ? prev + 1 : 0
-      );
-    }
-
-    if (diff < -threshold) {
-      // swipe right → prev
-      setSelectedIndex((prev) =>
-        prev > 0 ? prev - 1 : images.length - 1
-      );
-    }
-  };
-
   // --- NAVIGATION FUNCTIONS previous image ---
   const goPrev = () => {
     setSelectedIndex(prev =>
@@ -113,6 +62,29 @@ export default function Album() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [images.length]);
 
+  // close dropdown when clicking outside of it
+  const dropdownRef = useRef(null);
+
+  // --- CLOSE DROPDOWN WHEN CLICKING OUTSIDE OF IT ---
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target)
+      ) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    document.addEventListener("touchstart", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener("touchstart", handleOutsideClick);
+    };
+  }, []);
+
   return (
     <div className="album-page">
       <nav className="album-nav">
@@ -121,8 +93,9 @@ export default function Album() {
         </div>
         <div className="album-nav-links">
 
-          <div className="dropdown-container">
-            <button className="album-nav-button" onClick={() => setOpen(!open)}>
+          <div className="dropdown-container" ref={dropdownRef}>
+            <button className="album-nav-button"
+              onClick={() => setOpen(!open)}>
               Albums
             </button>
 
