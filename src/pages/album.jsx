@@ -76,12 +76,24 @@ export default function Album() {
       }
     };
 
-    document.addEventListener("mousedown", handleOutsideClick);
-    document.addEventListener("touchstart", handleOutsideClick);
+    useEffect(() => {
+      const handleOutside = (event) => {
+        if (
+          dropdownRef.current &&
+          !dropdownRef.current.contains(event.target)
+        ) {
+          setOpen(false);
+        }
+      };
 
+      document.addEventListener("pointerdown", handleOutside);
+
+      return () => {
+        document.removeEventListener("pointerdown", handleOutside);
+      };
+    }, []);
     return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-      document.removeEventListener("touchstart", handleOutsideClick);
+      document.removeEventListener("pointerdown", handleOutsideClick);
     };
   }, []);
 
