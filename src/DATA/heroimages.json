@@ -3,14 +3,14 @@
         "id": "highlands",
         "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781695367/DSCF0938-8_tzzxbs.jpg",
         "title": "highlands",
-        "mobilePosition": "60% 30%",
+        "mobilePosition": "50% 30%",
         "desktopPosition": "center"
     },
     {
         "id": "skye",
         "image": "https://res.cloudinary.com/dqyfoxlko/image/upload/v1781695323/DSCF1008-1_osi1mj.jpg",
         "title": "skye",
-        "mobilePosition": "80% 30%",
+        "mobilePosition": "70% 30%",
         "desktopPosition": "center"
     },
     {

@@ -85,7 +85,7 @@ export default function Album() {
           <div className="dropdown-container">
             <button className="album-nav-button"
               onClick={() => setOpen(!open)}>
-              Albums
+              Album
             </button>
 
 
