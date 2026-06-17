@@ -28,6 +28,18 @@ export default function Album() {
   // --- DROPDOWN MENU OPEN/CLOSE STATE ---
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   // --- NAVIGATION FUNCTIONS previous image ---
   const goPrev = () => {
     setSelectedIndex(prev =>
@@ -62,27 +74,6 @@ export default function Album() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [images.length]);
 
-  // close dropdown when clicking outside of it
-  const dropdownRef = useRef(null);
-
-  // --- CLOSE DROPDOWN WHEN CLICKING OUTSIDE OF IT ---
-  useEffect(() => {
-    const handleOutside = (event) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target)
-      ) {
-        setOpen(false);
-      }
-    };
-
-    document.addEventListener("pointerdown", handleOutside);
-
-    return () => {
-      document.removeEventListener("pointerdown", handleOutside);
-    };
-  }, []);
-
   return (
     <div className="album-page">
       <nav className="album-nav">
@@ -91,7 +82,7 @@ export default function Album() {
         </div>
         <div className="album-nav-links">
 
-          <div className="dropdown-container" ref={dropdownRef}>
+          <div className="dropdown-container">
             <button className="album-nav-button"
               onClick={() => setOpen(!open)}>
               Albums
@@ -120,6 +111,14 @@ export default function Album() {
         </div>
 
       </nav>
+
+      {open && (
+        <div
+          className="dropdown-backdrop"
+          onClick={() => setOpen(false)}
+        />
+      )}
+
 
       <main className="album-main">
         <header className="album-header">
