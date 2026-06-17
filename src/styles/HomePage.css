@@ -28,6 +28,13 @@
   --font-label: 'Hanken Grotesk', sans-serif;
 }
 
+@media (max-width: 768px) {
+  :root {
+    --stack-xl: 64px;
+    --stack-md: 32px;
+  }
+}
+
 /* Global resets specifically for the Home Page component */
 .home-page-container {
   background-color: var(--bg-color);
@@ -299,6 +306,15 @@
   .hero-header {
     padding-left: var(--margin-desktop);
     padding-right: var(--margin-desktop);
+    height: auto;
+    min-height: 100svh;
+    padding-bottom: 64px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-header {
+    padding-bottom: 32px;
   }
 }
 
@@ -306,18 +322,20 @@
   position: absolute;
   inset: 0;
   z-index: 0;
+
 }
 
 .hero-bg-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  outline: 2px solid green;
 }
 
 @media (max-width: 768px) {
   .hero-bg-img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     padding-top: 80px;
   }
@@ -327,6 +345,7 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, var(--bg-color) 0%, rgba(11, 21, 21, 0.2) 60%, transparent 100%);
+  outline: 2px solid violet;
 }
 
 .hero-content {
@@ -335,8 +354,7 @@
   max-width: 896px;
   /* max-w-4xl */
   text-align: left;
-
-
+  outline: 2px solid orange;
 }
 
 .hero-subtitle {
@@ -364,6 +382,7 @@
   padding-bottom: var(--stack-xl);
   padding-left: var(--margin-mobile);
   padding-right: var(--margin-mobile);
+  outline: 2px solid lime;
 }
 
 @media (min-width: 768px) {
@@ -381,6 +400,7 @@
 
 .bio-content {
   grid-column: span 12 / span 12;
+  outline: 2px solid yellow;
 }
 
 @media (min-width: 768px) {
@@ -418,8 +438,8 @@
 
 @media (max-width: 768px) {
   .bio-quote {
-    font-size: 28px;
-    line-height: 38px;
+    font-size: 20px;
+    line-height: 30px;
     padding-left: 20px;
   }
 }
@@ -776,4 +796,14 @@
   color: var(--on-surface-variant);
   opacity: 0.6;
   margin: 0;
+}
+
+@media (max-width: 768px) {
+
+  .bio-section,
+  .portfolio-section,
+  .newsletter-section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
 }
