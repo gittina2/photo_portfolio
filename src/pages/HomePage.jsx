@@ -162,17 +162,14 @@ export default function HomePage() {
         {/* Newsletter/Contact CTA */}
         <section id="contacts" className="newsletter-section">
           <h2 className="newsletter-title font-headline-lg">Vuoi collaborare o contattarmi?</h2>
-          <form className="newsletter-form-container" onSubmit={handleSubmit}>
-            <input
-              className="newsletter-input-field"
-              placeholder="IL TUO INDIRIZZO EMAIL"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            {/*<button className="newsletter-submit-btn" type="submit">Invia</button>*/}
-          </form>
+          <a
+            className="newsletter-submit-btn"
+            href="https://www.instagram.com/ttina345/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Scrivimi su Instagram
+          </a>
         </section>
       </main>
 
