@@ -1,16 +1,55 @@
-# React + Vite
+# Photography Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal photography portfolio built with React and Vite, showcasing travel and urban photography.
 
-Currently, two official plugins are available:
+## 🌐 Live Website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+https://your-project.pages.dev
 
-## React Compiler
+## 📸 About the Project
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project is a personal photography portfolio where I collect and share images from my travels and everyday urban exploration.  
+The goal is to create a clean and immersive experience where photos are the main focus.
 
-## Expanding the ESLint configuration
+## ⚙️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- Vite
+- JavaScript
+- Cloudinary (image hosting)
+- Cloudflare Pages (deployment)
+
+## ✨ Features
+
+- Responsive gallery layout
+- Image optimization via Cloudinary
+- Fast loading static site
+- Lightbox image viewing
+- Mobile-friendly design
+
+## 🚀 Getting Started
+
+To run the project locally:
+
+```bash
+npm install
+npm run dev
+```
+
+## 📦 Build
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+The output will be generated in the `dist` folder.
+
+## 🌍 Deployment
+
+The project is automatically deployed via Cloudflare Pages on every push to the main branch.
+
+## 📷 Purpose
+
+This project is part of my personal journey in photography and web development, combining visual storytelling with modern frontend technologies.
