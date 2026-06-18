@@ -42,26 +42,6 @@ export default function Album() {
     };
   }, [open]);
 
-  // --- KEYBOARD NAVIGATION ---
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") {
-        setSelectedIndex(null);
-      }
-
-      if (e.key === "ArrowRight") {
-        goNext();
-      }
-
-      if (e.key === "ArrowLeft") {
-        goPrev();
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [images.length]);
-
   return (
     <div className="album-page">
       <nav className="album-nav">

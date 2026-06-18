@@ -87,20 +87,18 @@ export default function HomePage() {
         </div>
       </header>
 
-
-
       <main>
         {/* Bio Section */}
         <section className="bio-section">
           <div className="grid-cols-12">
             <div className="bio-content">
-              <span className="bio-tag">Martina</span>
+              <span className="bio-tag">About me</span>
               <h2 className="bio-quote">
-                "Mi piace osservare come la luce cambia i luoghi: quando filtra tra le nuvole o tra gli alberi, quando si riflette nelle pozzanghere, quando rende più intensi i colori della natura.
+                Ciao! Sono Martina. Fotografo i luoghi che
+                visito da quando ero piccola, quando le macchine usa e getta erano ancora comuni.
                 <br />
-                Ricerco anche gli spazi costruiti dall’uomo, i pattern degli edifici e il modo in cui la presenza umana si inserisce nel paesaggio naturale.
-                <br />
-                Il mio lavoro nasce da questo sguardo: notare ciò che accade tra luce, spazio e atmosfera e restituirlo nel momento in cui si rivela."
+                Mi piace raccontare i posti in cui sono stata, ricordare come mi sono sentita mentre ero in viaggio e condividere attraverso
+                il mio obiettivo la luce del momento, le nuvole nel cielo e i dettagli dei luoghi che attraverso.
               </h2>
             </div>
           </div>
