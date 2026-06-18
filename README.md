@@ -4,7 +4,7 @@ A personal photography portfolio built with React and Vite, showcasing travel an
 
 ## 🌐 Live Website
 
-https://your-project.pages.dev
+https://photo-portfolio-efi.pages.dev/
 
 ## 📸 About the Project
 
