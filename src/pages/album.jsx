@@ -2,7 +2,9 @@ import "../styles/album.css";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import { useRef } from "react";
+
+import Lightbox from "../components/Lightbox";
+
 import albums from "../DATA/albums.json";
 import textContent from "../DATA/textcontent.json";
 
@@ -39,20 +41,6 @@ export default function Album() {
       document.body.style.overflow = "";
     };
   }, [open]);
-
-  // --- NAVIGATION FUNCTIONS previous image ---
-  const goPrev = () => {
-    setSelectedIndex(prev =>
-      prev > 0 ? prev - 1 : images.length - 1
-    );
-  };
-
-  // --- NAVIGATION FUNCTIONS next image ---
-  const goNext = () => {
-    setSelectedIndex(prev =>
-      prev < images.length - 1 ? prev + 1 : 0
-    );
-  };
 
   // --- KEYBOARD NAVIGATION ---
   useEffect(() => {
@@ -165,62 +153,13 @@ export default function Album() {
               );
             })}
           </div>
-
-          {selectedIndex !== null && (
-            <div className="lightbox" onClick={() => setSelectedIndex(null)}>
-
-              <button
-                className="lightbox-close"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setSelectedIndex(null);
-                }}
-              >
-                <span className="material-symbols-outlined">
-                  close
-                </span>
-              </button>
-
-              <button
-                className="lightbox-arrow lightbox-arrow-left"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setSelectedIndex(prev =>
-                    prev > 0 ? prev - 1 : images.length - 1
-                  );
-                }}
-              >
-                <span className="material-symbols-outlined">
-                  arrow_back_ios
-                </span>
-              </button>
-
-              <div className="lightbox-image">
-                <img src={images[selectedIndex].url}
-                  onClick={(e) => e.stopPropagation()} />
-
-                <div className="lightbox-caption">
-                  <p>{images[selectedIndex].caption}</p>
-                </div>
-              </div>
-
-              {/* RIGHT */}
-              <button
-                className="lightbox-arrow lightbox-arrow-right"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setSelectedIndex(prev =>
-                    prev < images.length - 1 ? prev + 1 : 0
-                  );
-                }}
-              >
-                <span className="material-symbols-outlined">
-                  arrow_forward_ios
-                </span>
-              </button>
-            </div>
-          )}
         </section>
+
+        <Lightbox
+          images={images}
+          selectedIndex={selectedIndex}
+          setSelectedIndex={setSelectedIndex}
+        />
 
         <div className="album-navigation">
           <section className="album-prev-section">
