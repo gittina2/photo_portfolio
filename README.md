@@ -1,6 +1,8 @@
 # Photography Portfolio
 
-A personal photography portfolio built with React and Vite, showcasing travel and urban photography.
+A personal photography portfolio showcasing my work.
+
+This project was born from the idea of combining my passion for photography with my programming background. Curious about frontend development, I built this website with React and Vite to create a space where I could collect and share the places I've explored through my lens.
 
 ## 🌐 Live Website
 
